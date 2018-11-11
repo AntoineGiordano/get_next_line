@@ -70,11 +70,11 @@ int				get_next_line(const int fd, char **line)
 	int				ret;
 	char			*tmp;
 
+	if (fd < 0 || BUFF_SIZE < 0 || read(fd, buff, 0) == -1 || !line)
+		return (-1);
 	if (!first)
 		first = ft_lstnew("\0", fd);
-	if (fd < 0 || !(file = ft_checkfd(first, fd)) ||
-	read(fd, buff, 0) == -1 || !line)
-		return (-1);
+	file = ft_checkfd(first, fd)
 	while (!ft_strchr(file->content, '\n') &&
 		(ret = read(file->content_size, buff, BUFF_SIZE)) > 0)
 	{
