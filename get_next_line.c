@@ -6,14 +6,12 @@
 /*   By: agiordan <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/10/24 15:51:29 by agiordan     #+#   ##    ##    #+#       */
-/*   Updated: 2018/10/24 15:51:30 by agiordan    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/12/02 19:44:18 by agiordan    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
-#include "libft/libft.h"
 #include "get_next_line.h"
-#include <stdio.h>
 
 static int		ft_findn(char *str)
 {
@@ -29,8 +27,6 @@ static t_list	*ft_checkfd(t_list *first, int fd)
 {
 	t_list *file;
 
-	if (fd < 0)
-		return (NULL);
 	file = first;
 	while (file)
 	{
@@ -74,7 +70,7 @@ int				get_next_line(const int fd, char **line)
 		return (-1);
 	if (!first)
 		first = ft_lstnew("\0", fd);
-	file = ft_checkfd(first, fd)
+	file = ft_checkfd(first, fd);
 	while (!ft_strchr(file->content, '\n') &&
 		(ret = read(file->content_size, buff, BUFF_SIZE)) > 0)
 	{
