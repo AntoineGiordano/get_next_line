@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_swapint.c                                     .::    .:/ .      .::   */
+/*   ft_strfill.c                                     .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: agiordan <marvin@le-101.fr>                +:+   +:    +:    +:+     */
+/*   By: mwaterso <mwaterso@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2018/10/22 19:02:12 by agiordan     #+#   ##    ##    #+#       */
-/*   Updated: 2018/11/14 19:07:53 by agiordan    ###    #+. /#+    ###.fr     */
+/*   Created: 2018/11/25 13:31:56 by mwaterso     #+#   ##    ##    #+#       */
+/*   Updated: 2018/11/25 13:39:17 by mwaterso    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_swapint(int *a, int *b)
+void	ft_strfill(void *s, int c, size_t n)
 {
-	int	temp;
+	size_t i;
 
-	if (!a || !b)
-		return ;
-	temp = *a;
-	*a = *b;
-	*b = temp;
+	i = 0;
+	while (i < n)
+	{
+		((char *)s)[i] = c;
+		i++;
+	}
 }

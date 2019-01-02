@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_swapint.c                                     .::    .:/ .      .::   */
+/*   ft_sqrt.c                                        .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: agiordan <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2018/10/22 19:02:12 by agiordan     #+#   ##    ##    #+#       */
-/*   Updated: 2018/11/14 19:07:53 by agiordan    ###    #+. /#+    ###.fr     */
+/*   Created: 2018/08/04 16:40:17 by agiordan     #+#   ##    ##    #+#       */
+/*   Updated: 2018/11/24 19:57:28 by agiordan    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	ft_swapint(int *a, int *b)
+int		ft_sqrt(int nb)
 {
-	int	temp;
+	int racine;
 
-	if (!a || !b)
-		return ;
-	temp = *a;
-	*a = *b;
-	*b = temp;
+	racine = -1;
+	while (++racine <= nb / 2)
+		if (racine * racine == nb)
+			return (racine);
+	return (0);
 }

@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_swapint.c                                     .::    .:/ .      .::   */
+/*   ft_addinttab.c                                   .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: agiordan <marvin@le-101.fr>                +:+   +:    +:    +:+     */
+/*   By: mwaterso <mwaterso@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2018/10/22 19:02:12 by agiordan     #+#   ##    ##    #+#       */
-/*   Updated: 2018/11/14 19:07:53 by agiordan    ###    #+. /#+    ###.fr     */
+/*   Created: 2018/11/14 20:16:36 by agiordan     #+#   ##    ##    #+#       */
+/*   Updated: 2018/11/30 17:44:11 by agiordan    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_swapint(int *a, int *b)
+int		**ft_addinttab(int **tab, int *line, size_t length)
 {
-	int	temp;
+	int		**newtab;
+	size_t	i;
 
-	if (!a || !b)
-		return ;
-	temp = *a;
-	*a = *b;
-	*b = temp;
+	newtab = (int **)malloc(sizeof(int *) * (length + 1));
+	i = 0;
+	while (i < length)
+	{
+		newtab[i] = tab[i];
+		tab[i] = NULL;
+		i++;
+	}
+	newtab[i] = line;
+	return (newtab);
 }
